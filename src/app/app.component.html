@@ -7,8 +7,9 @@
   </div>
 
   <ul>
-    <li *ngFor="let toDoItem of toDoList">
-      {{toDoItem.task}}
+    <li *ngFor="let toDoItem of toDoList; let i = index">
+      <input type="checkbox" (change)="completeTask(i)"/>
+      <span>{{toDoItem.task}}</span>
     </li>
   </ul>
 </main>

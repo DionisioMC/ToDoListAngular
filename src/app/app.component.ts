@@ -31,4 +31,9 @@ export class AppComponent {
       this.inputTask = "";
     }
   }
+
+  completeTask(index: number): void {
+    this.toDoList[index].isCompleted = !this.toDoList[index].isCompleted;
+    console.log(this.toDoList[index].isCompleted);
+  }
 }
