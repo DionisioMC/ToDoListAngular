@@ -5,6 +5,12 @@
     <input type="text" [(ngModel)]="inputTask" placeholder="Describe new task"/>
     <button (click)="addTask()">Add</button>
   </div>
+
+  <ul>
+    <li *ngFor="let toDoItem of toDoList">
+      {{toDoItem.task}}
+    </li>
+  </ul>
 </main>
 
 

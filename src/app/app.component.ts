@@ -1,8 +1,9 @@
+import { NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterOutlet } from "@angular/router";
 
-export interface toDoItem {
+export interface ToDoItem {
   id: number;
   task: string;
   isCompleted: boolean;
@@ -10,26 +11,24 @@ export interface toDoItem {
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, NgFor],
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  toDoList: toDoItem[] = [];
+  toDoList: ToDoItem[] = [];
   inputTask: string = "";
 
   addTask(): void {
-    console.log(this.inputTask);
-
     if (this.inputTask.trim() !== "") {
-      const newTask: toDoItem = {
+      const newTask: ToDoItem = {
         id: Date.now(),
         task: this.inputTask.trim(),
         isCompleted: false
       };
 
       this.toDoList.push(newTask);
-      console.log(this.toDoList);
+      this.inputTask = "";
     }
   }
 }
