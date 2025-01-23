@@ -34,6 +34,9 @@ export class AppComponent {
 
   completeTask(index: number): void {
     this.toDoList[index].isCompleted = !this.toDoList[index].isCompleted;
-    console.log(this.toDoList[index].isCompleted);
+  }
+
+  deleteTask(id: number): void {
+    this.toDoList = this.toDoList.filter(item => item.id !== id);
   }
 }
