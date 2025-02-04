@@ -6,10 +6,10 @@
     <button (click)="addTask()">Add</button>
   </div>
 
-  <ul>
-    <li *ngFor="let toDoItem of toDoList; let i = index">
-      <input type="checkbox" (change)="completeTask(i)"/>
-      <span>{{toDoItem.task}}</span>
+  <ul id="list">
+    <li *ngFor="let toDoItem of toDoList; let i = index" [ngClass]="{'completed': toDoItem.isCompleted}">
+      <input type="checkbox" [checked]="toDoItem.isCompleted" (change)="completeTask(i)"/>
+      <span [class.completed]="toDoItem.isCompleted">{{toDoItem.task}}</span>
       <button type="button" (click)="deleteTask(toDoItem.id)">Delete</button>
     </li>
   </ul>

@@ -1,4 +1,4 @@
-import { NgFor } from "@angular/common";
+import { NgClass, NgFor } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterOutlet } from "@angular/router";
@@ -11,7 +11,7 @@ export interface ToDoItem {
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgFor],
+  imports: [RouterOutlet, FormsModule, NgFor, NgClass],
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
